@@ -1,0 +1,49 @@
+PROJECT MINI SQL
+DATA FLIGHT-DELAY
+Step-by-Step Guided SQL Project (Real-World Dialogue Style)
+
+Step 1: Data Cleaning & Validation
+SQL Concepts:
+- `IS NULL`, `WHERE`, basic filtering
+
+Step 2: Calculate Average Delay by Airline
+AVG(), GROUP BY, filtering with WHERE
+
+Step 3: Analyze Delay by Time of Day
+EXTRACT(HOUR), CASE WHEN, grouping
+
+Step 4: Identify Most Delayed Airports
+GROUP BY, AVG(), airport-based comparison
+
+Step 5: Cancellations by Airline
+Aggregation, COUNT(), SUM(), calculated columns
+
+Step 6: Summary Dashboard View (Bonus)
+Combine metrics into one query
+
+Ringkasan: 
+Mengapa Proyek Ini Penting
+
+Saya tidak pernah memahami kekuatan sebenarnya dari SQL 
+sampai saya mengerjakan proyek analisis penundaan penerbangan.
+
+Ini singkat, tetapi merupakan skenario nyata tentang apa yang dapat
+Anda harapkan di tempat kerja. Anda pada dasarnya belajar bagaimana:
+- Bekerja dengan data berantakan yang realistis
+- Mempraktikkan logika tanggal/waktu yang mencerminkan pekerjaan nyata
+- Belajar mengkomunikasikan wawasan dengan pemangku kepentingan
+- Mendapatkan pengalaman yang langsung relevan dengan wawancara
+
+Ingin rencana lengkap untuk menguasai statistik, SQL, Excel, 
+dan Power BI hanya dalam 2 minggu hari?
+
+Dapatkan Peta Jalan Analis Data 60 Hari(https://)
+pemula untuk beralih dari bingung menjadi percaya diri 
+(dan siap kerja).
+
+Tanpa basa-basi. Hanya hasil.
+
+Saya juga memiliki lebih dari 10 sumber daya gratis tentang 
+analisis data di profil saya di sini:[](http:)
+
+Mari terus belajar.
