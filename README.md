@@ -32,7 +32,7 @@ portfolio/
 
 ---
 
-## 🚀 Cara Deploy ke GitHub Pages (Step by Step)
+## 🚀Deploy ke GitHub Pages
 
 ### Langkah 1 — Buat Repository GitHub
 
