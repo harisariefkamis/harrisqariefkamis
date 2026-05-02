@@ -11,7 +11,7 @@
 
 | Fitur | Detail |
 |---|---|
-| 🎨 **Animated Background** | Particle network canvas real-time |
+| 🎨 **Animated GSAP Background** | Particle network canvas real-time |
 | ⌨️ **Typing Effect** | Role berputar otomatis di hero section |
 | 📊 **Skill Bars** | Animasi saat scroll ke section skills |
 | 🃏 **Scroll Reveal** | Elemen muncul smooth saat di-scroll |
@@ -20,7 +20,7 @@
 
 ---
 
-## 📁 Struktur File
+## 📁 Struktur Project
 
 ```
 portfolio/
