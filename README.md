@@ -1,4 +1,4 @@
-# 🚀 Haris Arief Kamis — Data Analyst Portfolio
+# 🚀Build Portofolio Data Analyst
 
 > Portfolio website profesional yang siap deploy ke **GitHub Pages** secara gratis.
 
