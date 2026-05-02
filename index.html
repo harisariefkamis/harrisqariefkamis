@@ -9,20 +9,23 @@
       href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;700&family=Sora:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js" defer></script>
     <style>
       :root {
-        --navy: #060b18;
-        --navy2: #0d1526;
-        --navy3: #111d35;
-        --cyan: #00e5ff;
-        --cyan2: #00b4cc;
-        --orange: #ff6b35;
+        --navy: #020803;
+        --navy2: #08130c;
+        --navy3: #0b2317;
+        --cyan: #3cfab5;
+        --cyan2: #32c381;
+        --orange: #2dd184;
         --green: #39d353;
-        --purple: #8b5cf6;
-        --text: #cdd6f4;
-        --text-muted: #6b7db3;
-        --border: rgba(0, 229, 255, 0.12);
-        --card: rgba(13, 21, 38, 0.85);
+        --purple: #0fa879;
+        --text: #d6fce3;
+        --text-muted: #8ac9a3;
+        --border: rgba(45, 209, 132, 0.18);
+        --card: rgba(2, 12, 6, 0.84);
       }
 
       * {
@@ -44,23 +47,30 @@
         overflow-x: hidden;
       }
 
-      /* ── CANVAS BG ── */
-      #bg-canvas {
-        position: fixed;
-        inset: 0;
-        z-index: 0;
-        pointer-events: none;
+      /* ── Base Mesh Gradient ── */
+      #bg-mesh {
+        position: fixed; inset: 0; z-index: -10;
+        background:
+          radial-gradient(ellipse at 15% 5%,  hsla(155,100%,12%,1)  0%, transparent 60%),
+          radial-gradient(ellipse at 85% 95%, hsla(170,80%,8%,1)   0%, transparent 60%),
+          radial-gradient(ellipse at 50% 50%, hsla(145,50%,10%,.6)  0%, transparent 70%),
+          #020803;
       }
 
-      /* ── NOISE OVERLAY ── */
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-        pointer-events: none;
-        z-index: 1;
+      /* ── Orbs ── */
+      .orb {
+        position: fixed; border-radius: 50%;
+        pointer-events: none; will-change: transform; z-index: -9;
       }
+      #orb1 { width:680px; height:680px; top:2%;  left:8%;   background:radial-gradient(circle at 38% 38%, hsla(155, 100%, 62%, 0.60), transparent 68%); filter:blur(110px); }
+      #orb2 { width:500px; height:500px; top:52%; right:6%;  background:radial-gradient(circle at 38% 38%, hsla(170, 100%, 52%, 0.45), transparent 68%); filter:blur(95px);  }
+      #orb3 { width:420px; height:420px; top:78%; left:22%;  background:radial-gradient(circle at 38% 38%, hsla(150, 100%, 56%, 0.42), transparent 68%); filter:blur(85px);  }
+      #orb4 { width:340px; height:340px; top:28%; right:28%; background:radial-gradient(circle at 38% 38%, hsla(142, 100%, 52%, 0.32), transparent 68%); filter:blur(75px);  }
+      #orb5 { width:270px; height:270px; top:14%; right:12%; background:radial-gradient(circle at 38% 38%, hsla(145, 100%, 58%, 0.36), transparent 68%); filter:blur(65px);  }
+
+      /* ── Noise, Vignette ── */
+      #bg-noise    { position:fixed; inset:0; z-index:-8; pointer-events:none; opacity:.55; mix-blend-mode:overlay; }
+      #bg-vignette { position:fixed; inset:0; z-index:-7; pointer-events:none; background:radial-gradient(ellipse at 50% 50%, transparent 45%, rgba(0,0,0,0.65) 100%); }
 
       /* ── NAV ── */
       nav {
@@ -480,7 +490,7 @@
         color: #3d5275;
       }
       .t-key {
-        color: var(--purple);
+        color: var(--cyan);
       }
       .t-str {
         color: var(--green);
@@ -605,7 +615,7 @@
           transform 0.3s;
       }
       .edu-card:hover {
-        border-color: var(--orange);
+        border-color: var(--cyan2);
         transform: translateY(-4px);
       }
 
@@ -616,7 +626,7 @@
         left: 0;
         right: 0;
         height: 3px;
-        background: linear-gradient(90deg, var(--orange), var(--cyan));
+        background: linear-gradient(90deg, var(--cyan2), var(--cyan));
       }
 
       .edu-degree {
@@ -643,8 +653,8 @@
         display: inline-flex;
         align-items: center;
         gap: 0.4rem;
-        background: rgba(255, 107, 53, 0.1);
-        border: 1px solid rgba(255, 107, 53, 0.3);
+        background: rgba(45, 209, 132, 0.1);
+        border: 1px solid rgba(45, 209, 132, 0.3);
         border-radius: 6px;
         padding: 0.3rem 0.8rem;
         font-family: "JetBrains Mono", monospace;
@@ -1037,9 +1047,9 @@
         border-radius: 50%;
         background: linear-gradient(
           135deg,
-          rgba(0, 229, 255, 0.08) 0%,
+          rgba(56, 250, 181, 0.08) 0%,
           transparent 60%,
-          rgba(255, 107, 53, 0.06) 100%
+          rgba(45, 209, 132, 0.08) 100%
         );
         pointer-events: none;
       }
@@ -1113,7 +1123,7 @@
         bottom: 10%;
         right: -10%;
         animation-delay: 2.1s;
-        color: var(--purple);
+        color: var(--cyan2);
       }
 
       @keyframes chipFloat {
@@ -1215,7 +1225,15 @@
     </style>
   </head>
   <body>
-    <canvas id="bg-canvas"></canvas>
+    <!-- Background Layers -->
+    <div id="bg-mesh"    aria-hidden="true"></div>
+    <div id="orb1"       class="orb" aria-hidden="true"></div>
+    <div id="orb2"       class="orb" aria-hidden="true"></div>
+    <div id="orb3"       class="orb" aria-hidden="true"></div>
+    <div id="orb4"       class="orb" aria-hidden="true"></div>
+    <div id="orb5"       class="orb" aria-hidden="true"></div>
+    <canvas id="bg-noise"    aria-hidden="true"></canvas>
+    <div    id="bg-vignette" aria-hidden="true"></div>
 
     <!-- ── NAV ── -->
     <nav>
@@ -1950,73 +1968,62 @@
     </footer>
 
     <script>
-      // ── CANVAS PARTICLES ──
-      const canvas = document.getElementById("bg-canvas");
-      const ctx = canvas.getContext("2d");
-      let W,
-        H,
-        nodes = [],
-        animId;
+      window.addEventListener('load', () => {
 
-      function resize() {
-        W = canvas.width = window.innerWidth;
-        H = canvas.height = window.innerHeight;
-      }
-
-      function initNodes() {
-        nodes = [];
-        const count = Math.floor((W * H) / 22000);
-        for (let i = 0; i < count; i++) {
-          nodes.push({
-            x: Math.random() * W,
-            y: Math.random() * H,
-            vx: (Math.random() - 0.5) * 0.3,
-            vy: (Math.random() - 0.5) * 0.3,
-            r: Math.random() * 2 + 0.5,
-          });
-        }
-      }
-
-      function drawFrame() {
-        ctx.clearRect(0, 0, W, H);
-        // connections
-        for (let i = 0; i < nodes.length; i++) {
-          for (let j = i + 1; j < nodes.length; j++) {
-            const dx = nodes[i].x - nodes[j].x;
-            const dy = nodes[i].y - nodes[j].y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 140) {
-              ctx.beginPath();
-              ctx.moveTo(nodes[i].x, nodes[i].y);
-              ctx.lineTo(nodes[j].x, nodes[j].y);
-              ctx.strokeStyle = `rgba(0,180,204,${(1 - dist / 140) * 0.18})`;
-              ctx.lineWidth = 0.6;
-              ctx.stroke();
-            }
+        // 1. Noise Canvas
+        const canvas = document.getElementById('bg-noise')
+        const ctx    = canvas.getContext('2d')
+        function drawNoise() {
+          canvas.width = window.innerWidth; canvas.height = window.innerHeight
+          const img = ctx.createImageData(canvas.width, canvas.height)
+          for (let i = 0; i < img.data.length; i += 4) {
+            const v = (Math.random() * 255) | 0
+            img.data[i]=v; img.data[i+1]=v; img.data[i+2]=v; img.data[i+3]=20
           }
+          ctx.putImageData(img, 0, 0)
         }
-        // nodes
-        nodes.forEach((n) => {
-          ctx.beginPath();
-          ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-          ctx.fillStyle = "rgba(0,229,255,0.35)";
-          ctx.fill();
-          n.x += n.vx;
-          n.y += n.vy;
-          if (n.x < 0 || n.x > W) n.vx *= -1;
-          if (n.y < 0 || n.y > H) n.vy *= -1;
-        });
-        animId = requestAnimationFrame(drawFrame);
-      }
+        drawNoise()
+        window.addEventListener('resize', drawNoise)
 
-      resize();
-      initNodes();
-      drawFrame();
+        // 2. Lenis
+        const lenis = new Lenis({ duration:1.4, smoothWheel:true, wheelMultiplier:.85 })
+        gsap.registerPlugin(ScrollTrigger)
+        gsap.ticker.add(t => lenis.raf(t * 1000))
+        gsap.ticker.lagSmoothing(0)
+        lenis.on('scroll', ScrollTrigger.update)
 
-      window.addEventListener("resize", () => {
-        resize();
-        initNodes();
-      });
+        // 3. Orbs floating
+        const orbs = [
+          { el:'#orb1', fx: 65, fy: 42, dur: 9,  delay:0   },
+          { el:'#orb2', fx:-52, fy:-38, dur:11,  delay:1.8 },
+          { el:'#orb3', fx: 48, fy:-56, dur: 8,  delay:0.9 },
+          { el:'#orb4', fx:-38, fy: 50, dur:13,  delay:2.8 },
+          { el:'#orb5', fx: 32, fy:-44, dur:10,  delay:3.5 },
+        ]
+        orbs.forEach(o => {
+          gsap.to(o.el, { x:o.fx, y:o.fy, duration:o.dur, delay:o.delay, repeat:-1, yoyo:true, ease:'sine.inOut' })
+          gsap.to(o.el, { scale:1.14,    duration:o.dur*.7, delay:o.delay+.8, repeat:-1, yoyo:true, ease:'sine.inOut' })
+        })
+
+        // 4. Orbs parallax on scroll
+        const speeds = [-16, -28, -20, -13, -24]
+        orbs.forEach((o, i) => {
+          gsap.to(o.el, {
+            y: `+=${speeds[i]}%`, ease:'none',
+            scrollTrigger: { trigger:document.body, start:'top top', end:'bottom bottom', scrub:1.8 }
+          })
+        })
+
+        gsap.from(["nav", ".hero-badge", ".hero-title", ".hero-role", ".hero-desc", ".hero-cta", ".hero-stats", ".scroll-hint"], {
+          y: 30,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+          stagger: 0.12,
+          delay: 0.2,
+        })
+
+      })
 
       // ── TYPING EFFECT ──
       const roles = [
