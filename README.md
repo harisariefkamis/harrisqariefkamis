@@ -180,4 +180,4 @@ Edit CSS variables di bagian `:root`:
 
 ---
 
-*Made with ♥ · Haris Arief Kamis · Data Analyst Portfolio*
+*power_by· Haris Arief Kamis · Data Analyst Portfolio*
