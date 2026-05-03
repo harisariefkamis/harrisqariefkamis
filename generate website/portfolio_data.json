@@ -1,0 +1,176 @@
+{
+  "generated_at": "2026-05-02T11:42:32.009452",
+  "profile": {
+    "name": {
+      "first": "Haris",
+      "middle": "Arief",
+      "last": "Kamis"
+    },
+    "role": "Data Analyst",
+    "tagline": "Mahasiswa S1 Sains Data dengan passion kuat di bidang data analysis.",
+    "location": "Bogor, Indonesia",
+    "email": "harisariefkamis16@gmail.com",
+    "phone": "+6285282436796",
+    "linkedin": "https://linkedin.com/in/harisariefkamis",
+    "github": "https://github.com/harisariefkamis",
+    "gpa": 3.69,
+    "available": true
+  },
+  "stats": [
+    {
+      "value": "3.69",
+      "label": "IPK / GPA"
+    },
+    {
+      "value": "5+",
+      "label": "Sertifikasi"
+    },
+    {
+      "value": "6+",
+      "label": "Tools"
+    },
+    {
+      "value": "3+",
+      "label": "Organisasi"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Database & Query",
+      "icon": "🗄",
+      "items": [
+        {
+          "name": "SQL",
+          "pct": 90
+        },
+        {
+          "name": "BigQuery",
+          "pct": 80
+        },
+        {
+          "name": "PostgreSQL",
+          "pct": 78
+        }
+      ]
+    },
+    {
+      "category": "Programming",
+      "icon": "🐍",
+      "items": [
+        {
+          "name": "Python",
+          "pct": 82
+        },
+        {
+          "name": "Pandas / NumPy",
+          "pct": 75
+        },
+        {
+          "name": "Google Colaboratory",
+          "pct": 85
+        }
+      ]
+    },
+    {
+      "category": "Data Visualization",
+      "icon": "📊",
+      "items": [
+        {
+          "name": "Google Looker Studio",
+          "pct": 80
+        },
+        {
+          "name": "Matplotlib / Seaborn",
+          "pct": 73
+        },
+        {
+          "name": "Microsoft Excel",
+          "pct": 85
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "S1 Sains Data",
+      "school": "Universitas Insan Cita Indonesia (UICI)",
+      "period": "April 2024 – 2027",
+      "location": "Jakarta Selatan",
+      "gpa": "3.69",
+      "desc": "Fokus pada Sains Data, machine learning, statistika, dan analisis data. Semester 5 aktif.",
+      "color": "orange"
+    },
+    {
+      "degree": "Diploma III — Teknik Komputer",
+      "school": "Global Science Institute (GSI)",
+      "period": "Agustus 2016 – 2017",
+      "location": "Ternate, Maluku Utara",
+      "gpa": "Lulus",
+      "desc": "Fondasi kuat dalam ilmu komputer dan teknik informatika dasar.",
+      "color": "purple"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Mini Bootcamp DQLab Batch #10",
+      "issuer": "DQLab · Feb 2026 · Machine Learning, AI, SQL, Python",
+      "badge": "COMPLETED"
+    },
+    {
+      "name": "Data Analyst FullStack Intensive Bootcamp Batch #14",
+      "issuer": "MySkill · Jan–Feb 2024 · SQL, Python, Data Viz, Cleaning",
+      "badge": "COMPLETED"
+    },
+    {
+      "name": "Certificate of Mastery — Final Project Mentoring",
+      "issuer": "MySkill · Feb 2024 · SQL, Python, Data Visualization",
+      "badge": "MASTERY"
+    },
+    {
+      "name": "TOEFL Preparation Bootcamp",
+      "issuer": "Jun–Jul 2024 · Reading, Listening, Speaking, Writing",
+      "badge": "COMPLETED"
+    },
+    {
+      "name": "Python & SQL Fundamentals for Data Science",
+      "issuer": "DQLab · Fundamental SQL SELECT, Python Data Professional",
+      "badge": "CERTIFIED"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Exploratory Data Analysis (EDA)",
+      "icon": "📊",
+      "desc": "Analisis eksplorasi data menggunakan Python & Pandas untuk menemukan insight tersembunyi dalam dataset.",
+      "tags": [
+        "Python",
+        "Pandas",
+        "Matplotlib",
+        "Seaborn"
+      ],
+      "url": "https://github.com/harisariefkamis"
+    },
+    {
+      "title": "SQL Business Case Analysis",
+      "icon": "🗄",
+      "desc": "Menggunakan SQL dan BigQuery untuk menganalisis performa bisnis dan customer behavior.",
+      "tags": [
+        "SQL",
+        "BigQuery",
+        "PostgreSQL"
+      ],
+      "url": "https://github.com/harisariefkamis"
+    },
+    {
+      "title": "Dashboard Interaktif — Looker Studio",
+      "icon": "📈",
+      "desc": "Dashboard interaktif untuk monitoring KPI bisnis secara real-time menggunakan Google Looker Studio.",
+      "tags": [
+        "Looker Studio",
+        "BigQuery",
+        "Google Sheets"
+      ],
+      "url": "https://github.com/harisariefkamis"
+    }
+  ]
+}
